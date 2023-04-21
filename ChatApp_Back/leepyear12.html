@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Leep Year Check </title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+    
+        .result {
+            font-size: 18px;
+            font-weight: 500;
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <h1>Check If Year Is Not Leep Or Not </h1>
+    Enter the Year <input class="Year" type="text">
+    <button class="btn">CHECK</button>
+    <div class="result"></div>
+    <h3>click the above button to check the given year is leep or not..</h3>
+    <script>
+        let resultEle = document.querySelector(".result");
+        let yearEle = document.querySelector(".Year");
+
+        document.querySelector(".btn").addEventListener("click", () => {
+            if ((yearEle.value % 400 == 0) || (yearEle.value % 4 == 0 && yearEle.value % 100 != 0)) {
+                resultEle.innerHTML = yearEle.value + " is a leep year"
+            } else {
+                resultEle.innerHTML = yearEle.value + " is not  a leep year"
+            }
+        })
+    </script>
+</body>
+</html>
